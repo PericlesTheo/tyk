@@ -1037,9 +1037,8 @@ func (gw *Gateway) setupLogger() {
 
 		hook, err := logrus_sentry.NewSentryHook(gwConfig.SentryCode, logLevel)
 
-		hook.Timeout = 0
-
 		if err == nil {
+                        hook.Timeout = 0
 			log.Hooks.Add(hook)
 			rawLog.Hooks.Add(hook)
 		}
